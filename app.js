@@ -7,6 +7,10 @@ app.use('/', (req,res,next) =>{
     res.sendStatus(200);
 })
 
+app.use('/', (req,res,next) =>{
+    res.sendStatus(200);
+})
+
 
 
 app.listen(PORT, console.log(`Server Started on Port ${PORT}`));
