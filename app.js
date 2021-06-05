@@ -3,6 +3,11 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const bodyparser = require('body-parser');
 
+//connection to mysql database
+const sequelize = require('./util/database');
+
+const Student = require('./model/Student');
+
 //404 no page fond
 const {get404} = require('./controller/404');
 //ADMIN ROUTES 
@@ -27,4 +32,18 @@ app.use(get404);
 
 
 
-app.listen(PORT, console.log(`Server Started on Port ${PORT}`));
+sequelize
+Student.sync({force: true})
+
+.then((result) =>{
+    // console.log(result);
+    app.listen(PORT, console.log(`Server Started on Port ${PORT}`));
+    console.log('MySql Server Connected')
+})
+
+.catch((err) => {
+    console.log(err);
+})
+
+
+
