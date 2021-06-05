@@ -4,19 +4,19 @@ const app = express();
 const bodyparser = require('body-parser');
 
 //ADMIN ROUTES 
-const adminRoute = require('./routes/admin');
+const studentRoute = require('./routes/student');
 //EJS
 app.set('view engine', 'ejs');
 
 //bodyparser
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extende : true}));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json({}));
 
 
 //ROUTE
-app.use(adminRoute);
+app.use(studentRoute);
 
 
 app.listen(PORT, console.log(`Server Started on Port ${PORT}`));

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const {getAdmin} = require('../controller/admin');
+const {getStudent} = require('../controller/student');
 
-router.get('/', getAdmin);
+router.get('/', getStudent);
 
 
 
