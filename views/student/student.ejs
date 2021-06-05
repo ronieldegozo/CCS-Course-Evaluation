@@ -1,9 +1,8 @@
 <%- include('./includes/head') %>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header" >
     <div class="container d-flex align-items-center">
-
       <div class="logo mr-auto">
         <h1 class="text-light"><a href="/"><span>New Era University</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
@@ -12,11 +11,8 @@
 
       <!-- NAVBAR -->
       <%- include('./includes/navbar') %>
-
     </div>
   </header><!-- End Header -->
-
-
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -27,7 +23,7 @@
           <h1 data-aos="fade-up">COLLEGE OF COMPUTER STUDIES</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">Course Evaluation System</h2> 
           <div data-aos="fade-up" data-aos-delay="800">
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <a href="#"class="btn-get-started">Reserve Slots</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -40,33 +36,8 @@
 
   <main id="main">
 
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>About Us</h2>
-        </div>
-
-        <div class="row content">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-            <p>
-              Web based system course assessment helps to interact with the 
-              student to help them to choose their career path or course that they will be fit. Some students in freshmen are
-               having difficulty in choosing the course or career they want.
-            </p>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <p>
-              Web-based systems are the most powerful systems to use. It
-               assists in the processing of data, the storage of required information, and the presentation of the result to the user 
-              through the internet and we all know that technology is one of the most beneficial tools for students. 
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Us Section -->
+    <!-- about us -->
+    <%- include('./includes/about') %>
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
@@ -74,7 +45,7 @@
 
         <div class="row">
           <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
-            <img src="assets/img/counts-img.svg" alt="" class="img-fluid">
+            <img src="assets/img/undraw_programming_2svr.svg" alt="" class="img-fluid">
           </div>
 
           <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
@@ -119,7 +90,6 @@
       </div>
     </section><!-- End Counts Section -->
 
-
     <!-- offered course -->
     <%- include('./includes/offeredcourse') %>
 
@@ -129,7 +99,5 @@
     <!-- CONTACT US -->
     <%- include('./includes/contact') %>
   </main><!-- End #main -->
-
-
 
 <%- include('./includes/footer') %>

@@ -9,7 +9,7 @@ const studentRoute = require('./routes/student');
 app.set('view engine', 'ejs');
 
 //bodyparser
-app.use(express.urlencoded({extende : true}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json({}));
