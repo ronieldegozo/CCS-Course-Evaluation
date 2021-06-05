@@ -5,10 +5,9 @@ const bodyparser = require('body-parser');
 
 //404 no page fond
 const {get404} = require('./controller/404');
-
-
 //ADMIN ROUTES 
 const studentRoute = require('./routes/student');
+
 //EJS
 app.set('view engine', 'ejs');
 
@@ -22,8 +21,10 @@ app.use(bodyparser.json({}));
 //ROUTE
 app.use(studentRoute);
 
-
 //error code
 app.use(get404);
+
+
+
 
 app.listen(PORT, console.log(`Server Started on Port ${PORT}`));

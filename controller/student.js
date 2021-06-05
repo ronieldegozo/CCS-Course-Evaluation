@@ -5,3 +5,9 @@ exports.getStudent = (req, res) =>{
         pageTitle: 'Student'
     });
 }
+
+exports.getRegister = (req, res) =>{
+    res.render('student/register', {
+        pageTitle: 'Registration'
+    });
+}

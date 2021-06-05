@@ -1,0 +1,70 @@
+<%- include('./includes/head') %>
+
+<link rel="stylesheet" href="/css/register/style.css">
+<link rel="stylesheet" href="/css/register/style.scss">
+
+<div class="wrapper">
+    <div class="inner ">
+        <div class="image-holder">
+            <img src="/image/register/register.jpg" alt="">
+        </div>
+ 
+        <form action="/register" method="POST" class="mt-4">
+            <h3><strong>Examinee Registration Form</strong></h3>
+
+            <div class="form-wrapper">
+                <input  type="text"
+                id="fname"
+                name="fname"
+                class="form-control"
+                placeholder="First Name"
+                value="<%= typeof fname != 'undefined' ? fname : '' %>"/>
+            </div>
+
+            <div class="form-wrapper">
+                <input  type="text"
+                id="lname"
+                name="lname"
+                class="form-control"
+                placeholder="Last Name"
+                value="<%= typeof lname != 'undefined' ? lname : '' %>"/>
+            </div>
+
+            <div class="form-wrapper">
+              <input  type="number"
+              id="cnumber"
+              name="cnumber"
+              class="form-control"
+              placeholder="Contact Number"
+              value="<%= typeof cnumber != 'undefined' ? cnumber : '' %>"/>
+          </div>
+
+          <div class="form-wrapper">
+            <input   type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>"/>
+           </div>
+
+            <div class="form-wrapper">
+                <input   type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Enter Password"
+                value="<%= typeof password != 'undefined' ? password : '' %>"/>
+            </div>
+            
+            <button type="submit">Register</button>
+
+            <div class="footer mt-3">
+              <h5>Have an account? <a href="/" class="text-reset">Login here</a></h5>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<%- include('./includes/footer') %>
