@@ -28,6 +28,10 @@ const Student = sequelize.define('student', {
   password: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  status:{
+    type: Sequelize.STRING,
+    defaultValue: 'inactive'
   }
 
 });
