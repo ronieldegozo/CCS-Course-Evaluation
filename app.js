@@ -58,7 +58,6 @@ app.use(studentRoute);
 //error code
 app.use(get404);
 
-
 sequelize
 .sync()
 
