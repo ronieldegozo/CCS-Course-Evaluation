@@ -58,15 +58,18 @@ app.use(studentRoute);
 //error code
 app.use(get404);
 
-sequelize
-.sync()
 
-.then((result) =>{
-    // console.log(result);
-    app.listen(PORT, console.log(`Server Started on Port ${PORT}`));
-    console.log('MySql Server Connected')
-})
+app.listen(PORT, console.log(`Server Started on Port ${PORT}`));
+console.log('MySql Server Connected')
 
-.catch((err) => {
-    console.log(err);
-})
+// sequelize
+// .sync()
+
+// .then((result) =>{
+//     // console.log(result);
+
+// })
+
+// .catch((err) => {
+//     console.log(err);
+// })
