@@ -5,4 +5,5 @@ const sequelize = new Sequelize('ccs_evaluation', 'root', 'Roniel061617', {
     host: 'localhost'
 });
 
+
 module.exports = sequelize;

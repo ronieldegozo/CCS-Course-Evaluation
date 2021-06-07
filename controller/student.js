@@ -20,20 +20,13 @@ exports.getRegister = (req, res) =>{
 //post register student
 exports.postRegisterStudent = (req, res) =>{
     const {fname,lname,cnumber,email,password} = req.body;
-    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    // const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     let errors = [];
   
-
-    //check required fileds
+    // check required fileds
     if(!fname || !lname || !cnumber || !email, !password ){
         errors.push({ msg: 'Please fill in all fields'});
     }
-
-    // if(email !== re ){
-    //     errors.push({ msg: 'Please enter valid email address'})
-    // }
-
-    //check pass length
     if(password.length <6){
         errors.push({ msg: 'Password should be atleast 6 character'});
     }
@@ -83,5 +76,4 @@ exports.postRegisterStudent = (req, res) =>{
       });
   
     }
-
 }
