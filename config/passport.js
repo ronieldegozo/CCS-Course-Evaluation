@@ -6,7 +6,7 @@ const sequelize = require('sequelize');
 // Load User model
 const Admin = require('../model/Admin');
 
-module.exports = (passport)  => {
+module.exports = function(passport) {
   passport.use(
     new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
       // Match user

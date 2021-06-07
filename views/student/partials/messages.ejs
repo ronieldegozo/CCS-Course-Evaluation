@@ -24,9 +24,12 @@
 
 
 
-<!-- if registration if undefined -->
-<% if(error_log != '') { %>
-  <div class="alert alert-warning alert-dismissible fade show" type="button" class="close" data-dismiss="alert" aria-label="Close" style="    font-size: 12px;">
-    <%= error_log %>
-  </div>
+<% //USER ERROR login %>
+<% if(error != '') { %> 
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <%= error %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <% } %>

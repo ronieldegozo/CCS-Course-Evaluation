@@ -28,7 +28,7 @@ const adminRoute = require('./routes/admin');
 app.set('view engine', 'ejs');
 
 //bodyparser
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json({}));
@@ -50,7 +50,7 @@ app.use(flash());
 app.use((req,res,next)=>{
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
-    res.locals.error_log = req.flash('error_log');
+    res.locals.error = req.flash('error');
     next();
 })
 
