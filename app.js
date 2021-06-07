@@ -17,8 +17,13 @@ const Student = require('./model/Student');
 
 //404 no page fond
 const {get404} = require('./controller/404');
-//ADMIN ROUTES 
+//Student ROUTES 
 const studentRoute = require('./routes/student');
+
+//admin Routes
+const adminRoute = require('./routes/admin');
+
+
 
 //EJS
 app.set('view engine', 'ejs');
@@ -55,20 +60,23 @@ app.use(bodyparser.json({}));
 //ROUTE
 app.use(studentRoute);
 
+app.use(adminRoute);
+
+
 //error code
 app.use(get404);
 
-app.listen(PORT, console.log(`Server Started on Port ${PORT}`));
-console.log('MySql Server Connected')
 
-// sequelize
-// .sync()
 
-// .then((result) =>{
-//     // console.log(result);
+sequelize
+.sync()
 
-// })
+.then((result) =>{
+    // console.log(result);
+    app.listen(PORT, console.log(`Server Started on Port ${PORT}`));
+    console.log('MySql Server Connected')
+})
 
-// .catch((err) => {
-//     console.log(err);
-// })
+.catch((err) => {
+    console.log(err);
+})
