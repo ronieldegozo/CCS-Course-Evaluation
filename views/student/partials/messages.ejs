@@ -7,7 +7,6 @@
 <% } %>
 
 
-
 <!-- successfully register -->
 <% if(success_msg != '') { %>
   <div class="alert alert-success alert-dismissible fade show" type="button" class="close" data-dismiss="alert" aria-label="Close" style="    font-size: 12px;">
@@ -17,14 +16,13 @@
 
 <!-- if registration if undefined -->
 <% if(error_msg != '') { %>
-  <div class="alert alert-warning alert-dismissible fade show" type="button" class="close" data-dismiss="alert" aria-label="Close" style="    font-size: 12px;">
+  <div class="alert alert-danger alert-dismissible fade show" type="button" class="close" data-dismiss="alert" aria-label="Close" style="    font-size: 12px;">
     <%= error_msg %>
   </div>
 <% } %>
 
 
-
-<% //USER ERROR login %>
+<% //admin ERROR login %>
 <% if(error != '') { %> 
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
   <%= error %>
