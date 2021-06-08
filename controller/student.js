@@ -77,3 +77,12 @@ exports.postRegisterStudent = (req, res) =>{
   
     }
 }
+
+
+
+//get student dashboard
+exports.getStudentDashboard = (req, res, next) =>{
+   res.render('student/dashboard', {
+    pageTitle: 'Student Dashboard'
+   });
+}
