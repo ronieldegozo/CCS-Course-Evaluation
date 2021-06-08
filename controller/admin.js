@@ -33,7 +33,7 @@ exports.postAdminRegister = (req, res) =>{
   
     if(errors.length >0){
         res.render('admin/dashboard', {
-            errors, fname, lname, password, pageTitle: 'Admin'
+            errors, fname, lname, password,user: false, pageTitle: 'Admin'
         });
     }else{
     //validation
@@ -44,14 +44,14 @@ exports.postAdminRegister = (req, res) =>{
               errors.push({ msg: 'Email is already Taken'});
             //   res.redirect('admin/dashboard', )
               res.render('admin/dashboard', {
-                errors, fname, lname, email, password, pageTitle: 'Admin'
+                errors, fname, lname, email, password, user: false, pageTitle: 'Admin'
               });
           }else{
               const newAdmin = new Admin({
                 fname,
                 lname,
                 email,  
-                password,
+                password
               });
               //hashpassword
               bcrypt.genSalt(10, (err, salt)=>{
