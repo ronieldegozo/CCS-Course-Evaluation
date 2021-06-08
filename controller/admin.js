@@ -12,7 +12,8 @@ exports.getAdmin = (req, res) =>{
 //get admin dashboard
 exports.getAdminDashboard= (req, res) =>{
     res.render('admin/dashboard', {
-        pageTitle: 'Admin Dashboard'
+        pageTitle: 'Admin Dashboard',
+        user: req.user, //req user id
     });
 }
 
@@ -84,4 +85,12 @@ exports.postLoginAdmin = (req, res, next) =>{
         failureRedirect: '/admin',
         failureFlash: true
     })(req, res, next);
+}
+
+
+//admin logout using passportjs
+exports.getAdminLogout = (req, res, next) =>{
+    req.logout();
+    req.flash('success_msg', 'Admin has been logged out');
+    res.redirect('/admin');
 }
