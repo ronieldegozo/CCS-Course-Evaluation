@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= pageTitle %></title>
     <link rel="shortcut icon" href="/image/neu.png">
+
+    <!-- not important -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+
+    <!-- important -->
+    <link rel="stylesheet" href="/dashboard/icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/dashboard/css/style.css">
+  </head>
 <body>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createadmin">Create Admin Account</button>
-<a href="/admin/logout" class="btn btn-secondary">Logout</a>  
-
-<h1>Welcome Admin <%= user.fname %> </h1>
-
-  <!-- Modal -->
+  <!-- Modal create admin -->
   <div class="modal fade" id="createadmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -74,11 +74,120 @@
     </div>
   </div>
   
+  <div class="container-scroller">
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <h5><a href="/admin/dashboard">College of Computer Studies</a></h5>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="ti-view-list"></span>
+        </button>
+
+     
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-target="#profileDropdown">
+              <h5>Welcome Admin <%= user.fname %> </h5>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" id="profileDropdown"   aria-labelledby="profileDropdown">
+              <a href="/admin/logout" class="dropdown-item">
+                <i class="ti-power-off text-primary"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="ti-view-list"></span>
+        </button>
+      </div>
+    </nav>
 
 
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/dashboard">
+              <i class="ti-shield menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link" href="#">
+              <i class="ti-layout-list-post menu-icon"></i>
+              <span class="menu-title"  data-toggle="modal" data-target="#createadmin">Create Admin</span>
+            </span>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link" href="#">
+              <i class="ti-pie-chart menu-icon"></i>
+              <span class="menu-title">Charts</span>
+            </span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/tables/basic-table.html">
+              <i class="ti-view-list-alt menu-icon"></i>
+              <span class="menu-title">Tables</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/icons/themify.html">
+              <i class="ti-star menu-icon"></i>
+              <span class="menu-title">Icons</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="ti-user menu-icon"></i>
+              <span class="menu-title">User Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html"> Register 2 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="documentation/documentation.html">
+              <i class="ti-write menu-icon"></i>
+              <span class="menu-title">Documentation</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- content -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+    
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- important -->
+  <script src="/dashboard/js/vendor.bundle.base.js"></script>
+  <script src="/dashboard/js/off-canvas.js"></script>
+  <script src="/dashboard/js/template.js"></script>
+
+
+  <!-- not important -->
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>
