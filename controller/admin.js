@@ -1,6 +1,7 @@
 const Admin = require('../model/Admin');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const Student = require('../model/Student');
 
 //get admin login page
 exports.getAdmin = (req, res) =>{
@@ -9,12 +10,20 @@ exports.getAdmin = (req, res) =>{
     });
 }
 
+
 //get admin dashboard
 exports.getAdminDashboard= (req, res) =>{
-    res.render('admin/dashboard', {
+    Student.findAll()
+    .then((students)=>{
+      res.render('admin/dashboard', {
+        stud: students,
         pageTitle: 'Admin Dashboard',
         user: req.user, //req user id
-    });
+      });
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
 }
 
 //create a new admin
@@ -30,10 +39,11 @@ exports.postAdminRegister = (req, res) =>{
     if(password.length <6){
         errors.push({ msg: 'Password should be atleast 6 character'});
     }
+
   
     if(errors.length >0){
         res.render('admin/dashboard', {
-            errors, fname, lname, password,user: false, pageTitle: 'Admin'
+            errors, fname, lname, password,user: false, pageTitle: 'Admin', stud: false
         });
     }else{
     //validation
@@ -44,7 +54,7 @@ exports.postAdminRegister = (req, res) =>{
               errors.push({ msg: 'Email is already Taken'});
             //   res.redirect('admin/dashboard', )
               res.render('admin/dashboard', {
-                errors, fname, lname, email, password, user: false, pageTitle: 'Admin'
+                errors, fname, lname, email, password, user: false, pageTitle: 'Admin', stud: false
               });
           }else{
               const newAdmin = new Admin({
@@ -85,6 +95,27 @@ exports.postLoginAdmin = (req, res, next) =>{
         failureRedirect: '/admin',
         failureFlash: true
     })(req, res, next);
+}
+
+
+
+// handle student status 
+exports.postStudentStatus = (req, res, next) => {
+    
+    const studId = req.body.studentId;
+    const upstatus = req.body.status;
+
+    Student.findByPk(studId)
+      .then(students => {
+        students.status = upstatus;
+        return students.save();
+        // students.push(students);
+      })
+      .then(result => {
+        console.log('Student Updated!');
+        res.redirect('dashboard');
+      })
+      .catch(err => console.log(err));
 }
 
 

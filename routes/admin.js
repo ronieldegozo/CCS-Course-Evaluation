@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {getAdmin,getAdminDashboard,postAdminRegister, postLoginAdmin,getAdminLogout} = require('../controller/admin');
+const {getAdmin,getAdminDashboard,postAdminRegister, postLoginAdmin, getEditStudentStatus, postStudentStatus,getAdminLogout} = require('../controller/admin');
 const {ensureAuthenticated} = require('../config/authentication');
 
 //get student  home page
@@ -14,6 +14,9 @@ router.post('/register', postAdminRegister);
 
 //login admin
 router.post('/login', postLoginAdmin );
+
+//student status
+router.post('/student-status', postStudentStatus);
 
 //logout admin
 router.get('/logout', getAdminLogout);

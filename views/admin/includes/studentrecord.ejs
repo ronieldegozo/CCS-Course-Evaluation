@@ -1,0 +1,62 @@
+<% if (stud.length > 0) { %>
+<table class="table responsive">
+    <thead class="thead-dark col-2">
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Lastname</th>
+        <th>Contact #</th>
+        <th>Email</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody> 
+    <% for (let student of stud) { %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= student.fname %></td>
+        <td><%= student.lname %></td>
+        <td><%= student.cnumber %></td>
+        <td><%= student.email %></td>
+        <td style="cursor: pointer" data-toggle="modal" data-target="#status"><%= student.status %></td>
+        
+        <div class="modal fade" id="status" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Student Status</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/admin/student-status" method="POST">
+                        <select name="status" class="form-control" >
+                            <option>Select Student Status</option>
+                            <option value="inactive">inactive</option>
+                            <option value="active">active</option>
+                        </select>
+                                    <!-- studentid -->
+                        <input type="hidden" value="<%= student.id %>" name="studentId">
+                        <button type="submit" class="btn btn-success float-right mt-2">Update</button>
+                    </form>
+                </div>
+        
+              </div>
+            </div>
+        </div>
+
+      </tr>
+    <% } %>
+    </tbody>
+  </table>
+
+
+<% } else { %>
+    <div class="container">
+        <h1 style="color: red" >No Student Found!</h1>
+    </div>
+<% } %>
+
+
