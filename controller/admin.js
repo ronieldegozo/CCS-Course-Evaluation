@@ -102,10 +102,10 @@ exports.postLoginAdmin = (req, res, next) =>{
 // handle student status 
 exports.postStudentStatus = (req, res, next) => {
     
-    const studId = req.body.studentId;
+    const studentId = req.body.studentId;
     const upstatus = req.body.status;
 
-    Student.findByPk(studId)
+    Student.findByPk(studentId)
       .then(students => {
         students.status = upstatus;
         return students.save();
