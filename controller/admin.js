@@ -119,6 +119,16 @@ exports.postStudentStatus = (req, res, next) => {
 }
 
 
+//admin list of accounbts
+exports.getAdminAccount = (req, res) => {
+  res.render('admin/adminaccount', {
+    pageTitle: 'Admin'
+  });
+}
+
+
+
+
 //admin logout using passportjs
 exports.getAdminLogout = (req, res, next) =>{
     req.logout();

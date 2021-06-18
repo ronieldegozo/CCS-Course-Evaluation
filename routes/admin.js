@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {getAdmin,getAdminDashboard,postAdminRegister, postLoginAdmin, postStudentStatus,getAdminLogout} = require('../controller/admin');
+const {getAdmin,getAdminDashboard,getAdminAccount,postAdminRegister, postLoginAdmin, postStudentStatus,getAdminLogout} = require('../controller/admin');
 const {getQuestion} = require('../controller/adminQuestion');
 
 const {ensureAuthenticated} = require('../config/authentication');
@@ -10,6 +10,9 @@ router.get('/', getAdmin);
 
 //get admin dashboard //protected by the admin
 router.get('/dashboard',ensureAuthenticated, getAdminDashboard);
+
+//GET ADMIN ACCOUNT ROUTE
+router.get('/account', ensureAuthenticated, getAdminAccount);
 
 //register admin
 router.post('/register', postAdminRegister);
