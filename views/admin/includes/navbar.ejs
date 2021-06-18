@@ -1,0 +1,30 @@
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+      <h5><a href="/admin/dashboard">College of Computer Studies</a></h5>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+        <span class="ti-view-list"></span>
+      </button>
+
+      
+      <ul class="navbar-nav navbar-nav-right">
+        <li class="nav-item nav-profile dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-target="#profileDropdown">
+            
+            <h5><i class="ti-user menu-icon"></i>Welcome Admin <%= user.fname %>  </h5>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown" id="profileDropdown"   aria-labelledby="profileDropdown">
+            <a href="/admin/logout" class="dropdown-item">
+              <i class="ti-power-off text-primary"></i>
+              Logout
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+        <span class="ti-view-list"></span>
+      </button>
+    </div>
+  </nav>

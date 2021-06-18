@@ -19,6 +19,7 @@ exports.getAdminDashboard= (req, res) =>{
         stud: students,
         pageTitle: 'Admin Dashboard',
         user: req.user, //req user id
+        path: '/admin/dashboard'
       });
     })
     .catch((err)=>{
@@ -43,7 +44,7 @@ exports.postAdminRegister = (req, res) =>{
   
     if(errors.length >0){
         res.render('admin/dashboard', {
-            errors, fname, lname, password,user: false, pageTitle: 'Admin', stud: false
+            errors, fname, lname, password,user: false, pageTitle: 'Admin', stud: false, path: '/admin/register'
         });
     }else{
     //validation
@@ -54,7 +55,7 @@ exports.postAdminRegister = (req, res) =>{
               errors.push({ msg: 'Email is already Taken'});
             //   res.redirect('admin/dashboard', )
               res.render('admin/dashboard', {
-                errors, fname, lname, email, password, user: false, pageTitle: 'Admin', stud: false
+                errors, fname, lname, email, password, user: false, pageTitle: 'Admin', stud: false, path: '/admin/register'
               });
           }else{
               const newAdmin = new Admin({
@@ -122,11 +123,11 @@ exports.postStudentStatus = (req, res, next) => {
 //admin list of accounbts
 exports.getAdminAccount = (req, res) => {
   res.render('admin/adminaccount', {
-    pageTitle: 'Admin'
+    pageTitle: 'Admin Accounts',
+    path: '/admin/account',
+    user: req.user
   });
 }
-
-
 
 
 //admin logout using passportjs

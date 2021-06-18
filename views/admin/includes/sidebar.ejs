@@ -1,0 +1,43 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      
+      <li class="nav-item">
+        <a class="nav-link <%= path === '/admin/dashboard' ? 'active' : '' %>" href="/admin/dashboard">
+          <i class="ti-shield menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link <%= path === '/admin/account' ? 'active' : '' %>" href="/admin/account">
+          <i class="ti-user menu-icon"></i>
+          <span class="menu-title">Admin</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <span class="nav-link <%= path === '/admin/register' ? 'active' : '' %>" href="/admin/register">
+          <i class="ti-plus menu-icon"></i>
+          <span class="menu-title"  style="cursor: pointer" data-toggle="modal" data-target="#createadmin">Create Admin</span>
+        </span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%= path === '/admin/question' ? 'active' : '' %>" href="/admin/question">
+          <i class="ti-menu-alt menu-icon"></i>
+          <span class="menu-title">Questions</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="ti-email menu-icon"></i>
+          <span class="menu-title">Email</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="ti-files menu-icon"></i>
+          <span class="menu-title">Student Files</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
