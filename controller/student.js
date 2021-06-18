@@ -79,6 +79,10 @@ exports.postRegisterStudent = (req, res) =>{
 }
 
 
+exports.postLoginStudent = (req, res) =>{
+    console.log('Logging students');
+}
+
 
 //get student dashboard
 exports.getStudentDashboard = (req, res, next) =>{

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {getStudent, getRegister, postRegisterStudent, getStudentDashboard} = require('../controller/student');
+const {getStudent, getRegister, postRegisterStudent, postLoginStudent, getStudentDashboard} = require('../controller/student');
 const { postEmail} = require('../controller/email');
 
 
@@ -12,6 +12,9 @@ router.get('/register', getRegister);
 
 //post register student account
 router.post('/register', postRegisterStudent);
+
+//login student
+router.post('/login', postLoginStudent);
 
 //get Student dashboard
 router.get('/dashboard', getStudentDashboard);

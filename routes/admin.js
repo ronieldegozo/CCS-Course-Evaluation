@@ -21,7 +21,7 @@ router.post('/login', postLoginAdmin );
 router.post('/student-status', postStudentStatus);
 
 //get admin questions
-router.get('/question', getQuestion);
+router.get('/question',ensureAuthenticated, getQuestion);
 
 //logout admin
 router.get('/logout', getAdminLogout);
