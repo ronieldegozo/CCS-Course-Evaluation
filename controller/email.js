@@ -64,5 +64,5 @@ exports.getEmail = (req, res) => {
     pageTitle: 'Emails',
     user: req.user,
     path: '/admin/email'
-});
+  });
 }
