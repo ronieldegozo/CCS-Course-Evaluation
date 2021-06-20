@@ -55,3 +55,14 @@ exports.postEmail = (req, res) => {
         res.redirect('/');
     });
 }
+
+
+
+//get email page for admin
+exports.getEmail = (req, res) => {
+  res.render('admin/email', {
+    pageTitle: 'Emails',
+    user: req.user,
+    path: '/admin/email'
+});
+}
