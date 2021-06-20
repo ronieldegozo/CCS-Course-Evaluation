@@ -105,10 +105,13 @@ exports.postStudentStatus = (req, res, next) => {
     
     const studentId = req.body.studentId;
     const upstatus = req.body.status;
+    const update = req.body.date;
+
 
     Student.findByPk(studentId)
       .then(students => {
         students.status = upstatus;
+        students.date = update;
         return students.save();
         // students.push(students);
       })
