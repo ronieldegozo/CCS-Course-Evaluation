@@ -1,3 +1,5 @@
+
+
 <% if (stud.length > 0) { %>
 <table class="table responsive">
     <thead class="thead-dark col-2">
@@ -23,38 +25,20 @@
         <td><%= student.email %></td>
         <td><%= student.date %></td>
         <td><%= student.status %></td>
-          <!-- update specific student status -->
+        <!-- update specific student status -->
         <td>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Schedule Students</button>
+          <form action="/admin/student-status" method="POST">
+            <select name="status" class="form-control" >
+                <option disabled style="color: green;"><%= student.status %></option>
+                <option value="inactive">inactive</option>
+                <option value="active">active</option>
+            </select>
+                        <!-- studentid -->
+            <input id="date" type="date"name="date" placeholder="mm/dd/yyyy" value="<%= student.date %>"/>
+            <input type="hidden" value="<%= student.id %>" name="studentId">
+            <button type="submit" class="btn btn-success float-right mt-2">Update</button>
+          </form>
         </td>
-        <!-- Modal for Schedule students -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Schedule Students</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <!-- update students -->
-                <form action="/admin/student-status" method="POST">
-                  <select name="status" class="form-control" >
-                      <option disabled style="color: green;"><%= student.status %></option>
-                      <option value="inactive">inactive</option>
-                      <option value="active">active</option>
-                  </select>
-                  <input id="date" class="form-control" type="date"name="date" placeholder="mm/dd/yyyy" value="<%= student.date %>"/>
-                              <!-- studentid -->
-                  <input type="hidden" value="<%= student.id %>" name="studentId">
-                  <button type="submit" class="btn btn-success float-right mt-2">Update</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </tr>
     <% } %>
     </tbody>
