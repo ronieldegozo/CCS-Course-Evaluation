@@ -80,12 +80,7 @@ exports.postRegisterStudent = (req, res) =>{
 
 //loggin students to the student dashboard
 exports.postLoginStudent = (req, res, next) =>{
-
-    passport.authenticate('local', {
-        successRedirect: '/dashboard',
-        failureRedirect: '/',
-        failureFlash: true
-    })(req, res, next);
+    console.log('Logging students');
 }
 
 

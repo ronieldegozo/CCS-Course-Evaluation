@@ -13,7 +13,7 @@ router.get('/register', getRegister);
 //post register student account
 router.post('/register', postRegisterStudent);
 
-//login student
+//post login student
 router.post('/login', postLoginStudent);
 
 //get Student dashboard

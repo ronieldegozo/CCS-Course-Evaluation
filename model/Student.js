@@ -21,6 +21,9 @@ const Student = sequelize.define('student', {
     type: Sequelize.BIGINT,
     allowNull: false
   },
+  date: {
+    type: Sequelize.DATEONLY
+  },
   email: {
     type: Sequelize.STRING,
     allowNull: false

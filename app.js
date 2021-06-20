@@ -16,7 +16,7 @@ const session = require('express-session');
 
 //passport configuration
 require('./config/passport')(passport)
-require('./config/studentpassport')(passport);
+
 
 //404 no page fond
 const {get404} = require('./controller/404');
