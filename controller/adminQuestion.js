@@ -7,3 +7,12 @@ exports.getQuestion = (req, res) =>{
         path: '/admin/question'
     });
 }
+
+
+exports.getCourse = (req, res) =>{
+    res.render('admin/course', {
+        pageTitle: 'Course',
+        user: req.user,
+        path: '/admin/manage-course'
+    });
+}
