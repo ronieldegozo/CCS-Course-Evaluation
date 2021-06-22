@@ -28,11 +28,13 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="#">Add Course</a></li>
+            <li class="nav-item"> <a  class="nav-link <%= path === '/admin/manage-course' ? 'active' : '' %>" href="/admin/manage-course"   data-toggle="modal" data-target="#exampleModal">Add Course</a></li>
             <li class="nav-item"> <a class="nav-link <%= path === '/admin/manage-course' ? 'active' : '' %>" href="/admin/manage-course">Manage Course</a></li>
           </ul>
         </div>
       </li>
+
+
       
       <li class="nav-item">
         <a class="nav-link <%= path === '/admin/question' ? 'active' : '' %>" href="/admin/question">
@@ -57,3 +59,20 @@
 
     </ul>
   </nav>
+
+<!-- Modal for Add COurse -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <strong class="modal-title" id="exampleModalLabel">Add Course</strong>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
