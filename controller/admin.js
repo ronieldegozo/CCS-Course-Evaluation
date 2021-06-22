@@ -125,11 +125,21 @@ exports.postStudentStatus = (req, res, next) => {
 
 //admin list of accounbts
 exports.getAdminAccount = (req, res) => {
-  res.render('admin/adminaccount', {
-    pageTitle: 'Admin Accounts',
-    path: '/admin/account',
-    user: req.user
-  });
+
+  Admin.findAll()
+  .then((admin)=>{
+    res.render('admin/adminaccount', {
+      admin: admin,
+      pageTitle: 'Admin Accounts',
+      user: req.user, //req user id
+      path: '/admin/account',
+    });
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+
+
 }
 
 
