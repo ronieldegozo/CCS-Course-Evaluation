@@ -71,7 +71,19 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        
+      <form action="/admin/manage-course" method="POST">
+        <div class="form-group">
+            <label for="course"><strong>Course Name</strong></label>
+            <input type="text" 
+            name="course" 
+            class="form-control" 
+            id="course" 
+            placeholder="Course Name" >
+        </div>
+        <button type="submit" class="btn btn-success float-right">Create Course</button>
+      </form>  
+
       </div>
     </div>
   </div>
