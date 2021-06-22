@@ -12,11 +12,18 @@ exports.getQuestion = (req, res) =>{
 
 //getting course
 exports.getCourse = (req, res) =>{
-    res.render('admin/course', {
+    Course.findAll()
+    .then((course)=>{
+      res.render('admin/course', {
+        course: course,
         pageTitle: 'Course',
-        user: req.user,
+        user: req.user, //req user id
         path: '/admin/manage-course'
-    });
+      });
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
 }
 
 //add new course
@@ -27,7 +34,7 @@ exports.PostCourse = (req, res, next) => {
         course: course,
     })
     .then(result =>{
-        console.log(result);
+        console.log('New Course Created');
         res.redirect('/admin/manage-course');
     })
     .catch((err) =>{
