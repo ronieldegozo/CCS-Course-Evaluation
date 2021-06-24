@@ -58,11 +58,22 @@ exports.postEmail = (req, res) => {
 
 
 
-//get email page for admin
-exports.getEmail = (req, res) => {
-  res.render('admin/email', {
-    pageTitle: 'Emails',
+//get email page for student
+exports.getEmailStudent = (req, res) => {
+  res.render('admin/email-student', {
+    pageTitle: 'Email Student',
     user: req.user,
-    path: '/admin/email'
+    path: '/admin/email-student'
+  });
+}
+
+
+
+//get email page for interviewer
+exports.getEmailInterviewer = (req, res) => {
+  res.render('admin/email-interviewer', {
+    pageTitle: 'Email Interviewer',
+    user: req.user,
+    path: '/admin/email-interviewer'
   });
 }

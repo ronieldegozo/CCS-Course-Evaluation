@@ -42,12 +42,21 @@
           <span class="menu-title">Questions</span>
         </a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link <%= path === '/admin/email' ? 'active' : '' %>" href="/admin/email">
-          <i class="ti-email menu-icon"></i>
+        <a class="nav-link" data-toggle="collapse" href="#email" aria-expanded="false" aria-controls="ui-basic">
+          <i class="ti-email  menu-icon"></i>
           <span class="menu-title">Email</span>
+          <i class="menu-arrow"></i>
         </a>
+        <div class="collapse" id="email">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a  class="nav-link <%= path === '/admin/email-student' ? 'active' : '' %>" href="/admin/email-student">Email Student</a></li>
+            <li class="nav-item"> <a class="nav-link <%= path === '/admin/email-interviewer' ? 'active' : '' %>" href="/admin/email-interviewer">Email Interviewer</a></li>
+          </ul>
+        </div>
       </li>
+
 
       <li class="nav-item">
         <a class="nav-link <%= path === '/admin/student-files' ? 'active' : '' %>" href="/admin/student-files">

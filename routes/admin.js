@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {getAdmin,getAdminDashboard,getAdminAccount,postAdminRegister, postLoginAdmin, postStudentStatus,getAdminLogout} = require('../controller/admin');
 const {getQuestion, getCourse, PostCourse} = require('../controller/adminQuestion');
-const {getEmail} = require('../controller/email');
+const {getEmailStudent,getEmailInterviewer} = require('../controller/email');
 const {getStudentFiles} = require('../controller/studentFiles');
 
 const {ensureAuthenticated} = require('../config/authentication');
@@ -34,8 +34,11 @@ router.post('/manage-course', PostCourse);
 //get admin questions
 router.get('/question',ensureAuthenticated, getQuestion);
 
-//get admin email 
-router.get('/email',ensureAuthenticated, getEmail);
+//get admin email  student
+router.get('/email-student',ensureAuthenticated, getEmailStudent);
+
+//get admin email  interviewer
+router.get('/email-interviewer',ensureAuthenticated, getEmailInterviewer);
 
 //get admin student files 
 router.get('/student-files',ensureAuthenticated, getStudentFiles);
