@@ -1,54 +1,79 @@
 
-
-<% if (stud.length > 0) { %>
-<table class="table responsive">
-    <thead class="thead-dark col-2">
-      <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Lastname</th>
-        <th>Contact #</th>
-        <th>Email</th>
-        <th>Date</th>
-        <th>Status</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-
-    <tbody> 
-    <% for (let student of stud) { %>
-      <tr>
-        <td><%= student.id %></td>
-        <td><%= student.fname %></td>
-        <td><%= student.lname %></td>
-        <td><%= student.cnumber %></td>
-        <td><%= student.email %></td>
-        <td><%= student.date %></td>
-        <td><%= student.status %></td>
-        <!-- update specific student status -->
-        <td>
-          <form action="/admin/student-status" method="POST">
-            <select name="status" class="form-control" >
-                <option disabled style="color: green;"><%= student.status %></option>
-                <option value="inactive">inactive</option>
-                <option value="active">active</option>
-            </select>
-                        <!-- studentid -->
-            <input id="date" type="date"name="date" placeholder="mm/dd/yyyy" value="<%= student.date %>"/>
-            <input type="hidden" value="<%= student.id %>" name="studentId">
-            <button type="submit" class="btn btn-success float-right mt-2">Update</button>
-          </form>
-        </td>
-      </tr>
-    <% } %>
-    </tbody>
-  </table>
-
-
-<% } else { %>
-    <div class="container">
-        <h1 style="color: red" >No Student Found!</h1>
+  <div class="row">
+    <div class="col-sm">
+      <h2>Active</h2>
+    
+      <% if (stud.length > 0) { %>
+        <table class="table responsive">
+            <thead class="thead-dark col-2">
+              <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Lastname</th>
+                <th>Contact #</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+        
+            <tbody> 
+            <% for (let student of stud) { %>
+              <tr>
+                <td><%= student.id %></td>
+                <td><%= student.fname %></td>
+                <td><%= student.lname %></td>
+                <td><%= student.cnumber %></td>
+                <td><%= student.email %></td>
+                <td><%= student.date %></td>
+                <td><%= student.status %></td>
+                <!-- update specific student status -->
+                <td>
+                  <form action="/admin/student-status" method="POST">
+                    <select name="status" class="form-control" >
+                        <option disabled style="color: green;"><%= student.status %></option>
+                        <option value="inactive">inactive</option>
+                        <option value="active">active</option>
+                    </select>
+                                <!-- studentid -->
+                    <input id="date" type="date"name="date" placeholder="mm/dd/yyyy" value="<%= student.date %>"/>
+                    <input type="hidden" value="<%= student.id %>" name="studentId">
+                    <button type="submit" class="btn btn-success float-right mt-2">Update</button>
+                  </form>
+                </td>
+              </tr>
+            <% } %>
+            </tbody>
+          </table>
+        
+        
+        <% } else { %>
+            <div class="container">
+                <h1 style="color: red" >No Student Found!</h1>
+            </div>
+        <% } %>
+    
     </div>
-<% } %>
+
+    <div class="col-sm">
+      <h2>In-Active</h2>
+    </div>
+
+    <div class="col-sm">
+      <h2>Pie graph accuracy</h2>
+    </div>
+  </div>
 
 
+
+
+<nav aria-label="Page navigation example ">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>

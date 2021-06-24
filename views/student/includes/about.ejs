@@ -1,3 +1,13 @@
+
+<style>
+        .unselectable {
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+</style>
 <section id="about" class="about">
     <div class="container">
 
@@ -7,8 +17,8 @@
 
       <div class="row content">
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-          <p>
-            Web based system course assessment helps to interact with the 
+          <p class="unselectable" oncopy="return false" oncut="return false" onpaste="return false">
+           Web based system course assessment helps to interact with the 
             student to help them to choose their career path or course that they will be fit. Some students in freshmen are
              having difficulty in choosing the course or career they want.
           </p>
