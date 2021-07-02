@@ -5,42 +5,51 @@
     <div id="wrapper">
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas ti-user"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Examinee Roniel </div>
+                <div class="sidebar-brand-text mx-3">Welcome Student Roniel</div>
             </a>
-
-            <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
+                   <!-- IF STUDENT IS NOW VERIFIED -->
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
+                <i class="fas ti-dashboard"></i>
                     <span>Dashboard</span></a>
             </li>
-
-            <!-- Nav Item - Pages Collapse Menu -->
+            <hr class="sidebar-divider d-none d-md-block">
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
+                <i class="fas ti-reload"></i>
                     <span>Exam Process</span>
                 </a>
-
             </li>
-
-
-            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                <i class="fas ti-write"></i>
+                    <span>Student Accuracy</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                <i class="fas ti-download"></i>
+                    <span>Download Performance</span>
+                </a>
+            </li>
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            
+                <button id="sidebarToggleTop" class=" rounded-circle"  id="sidebarToggle">
+                    <i class="fa ti-list"></i>
+                </button>
 
+            </div>
         </ul>
-        <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -53,7 +62,7 @@
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
+                        <i class="fa ti-list"></i>
                     </button>
 
                     <!-- Topbar Navbar -->
@@ -69,7 +78,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fas ti-power-off fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
                             </div>
